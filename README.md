@@ -27,7 +27,7 @@ recipes on four architectures: Pythia-410M, Qwen-0.5B, LLaMA-7B, and Qwen1.5-7B.
 ## The finding
 
 **The gate dominates the choice of base loss.** Gate any of DPO, IPO, DPO-Shift, or Cal-DPO with the same
-valley-probability gate, and the three land within about a point of each other on every architecture —
+valley-probability gate, and the three land within about a point of each other on every architecture,
 while their ungated counterparts scatter across a much wider, mostly-negative range. A separate baseline,
 DPO-Shift (a global, training-progress-scheduled coefficient rather than a per-example gate), barely moves
 the needle off the plain DPO baseline anywhere.
