@@ -11,7 +11,7 @@ parameters.**
 > further base loss (DPO-Shift) trained beyond what's in the current preprint.
 
 **Paper:** [arXiv:2605.02626](https://arxiv.org/abs/2605.02626)
-**Interactive comparison:** [claude.ai/code/artifact/…](https://claude.ai/code/artifact/6908ffbf-7781-453f-a573-897fd7470b3c) — same data, with sortable detail and a live rendering of the chart below.
+**Interactive comparison:** [claude.ai/code/artifact/…](https://claude.ai/code/artifact/6908ffbf-7781-453f-a573-897fd7470b3c), same data, with sortable detail and a live rendering of the chart below.
 
 ## The question
 
@@ -21,7 +21,7 @@ mapping, Cal-DPO's calibration term, or because of a shared *gating* mechanism t
 rejected-response gradient once its probability is already very low?
 
 To find out, the same gate (a smooth sigmoid threshold on the rejected response's estimated probability)
-was attached to three different base losses, DPO, IPO, and Cal-DPO, and trained under identical
+was attached to 4 different base losses, DPO, IPO, Cal-DPO, and DOP-Shift, and trained under identical
 recipes on four architectures: Pythia-410M, Qwen-0.5B, LLaMA-7B, and Qwen1.5-7B.
 
 ## The finding
