@@ -1,14 +1,14 @@
 # Gate-DPO vs. the Field
 
-**A mass-dynamics comparison of preference-optimization losses — baseline, calibrated, gated, and
-globally-scheduled — measured on the same protocol, across four model architectures spanning 0.5B to 7B
+**A mass-dynamics comparison of preference-optimization losses, baseline, calibrated, gated, and
+globally-scheduled, measured on the same protocol, across four model architectures spanning 0.5B to 7B
 parameters.**
 
 > This repository presents a self-contained slice of results from **Gradient-Gated DPO: Stabilizing
-> Preference Optimization in Language Models** — a project on mitigating the *squeezing effect* in
+> Preference Optimization in Language Models**, a project on mitigating the *squeezing effect* in
 > off-policy DPO training, the tendency for training too long to make even the chosen response less
-> likely. This repo extends the paper's results with an additional architecture (Qwen1.5-7B) and two
-> further base losses (IPO, Cal-DPO) trained beyond what's in the current preprint.
+> likely. This repo extends the paper's results with an additional architecture (Qwen1.5-7B) and one
+> further base loss (DPO-Shift) trained beyond what's in the current preprint.
 
 **Paper:** [arXiv:2605.02626](https://arxiv.org/abs/2605.02626)
 **Interactive comparison:** [claude.ai/code/artifact/…](https://claude.ai/code/artifact/6908ffbf-7781-453f-a573-897fd7470b3c) — same data, with sortable detail and a live rendering of the chart below.
@@ -16,17 +16,17 @@ parameters.**
 ## The question
 
 When a DPO-style method reduces "squeezing" (destructive redistribution of probability mass away from
-*both* chosen and rejected responses), is that because of the specific loss formulation — IPO's identity
-mapping, Cal-DPO's calibration term — or because of a shared *gating* mechanism that down-weights the
+*both* chosen and rejected responses), is that because of the specific loss formulation, IPO's identity
+mapping, Cal-DPO's calibration term, or because of a shared *gating* mechanism that down-weights the
 rejected-response gradient once its probability is already very low?
 
 To find out, the same gate (a smooth sigmoid threshold on the rejected response's estimated probability)
-was attached to three different base losses — DPO, IPO, and Cal-DPO — and trained under identical
+was attached to three different base losses, DPO, IPO, and Cal-DPO, and trained under identical
 recipes on four architectures: Pythia-410M, Qwen-0.5B, LLaMA-7B, and Qwen1.5-7B.
 
 ## The finding
 
-**The gate dominates the choice of base loss.** Gate any of DPO, IPO, or Cal-DPO with the same
+**The gate dominates the choice of base loss.** Gate any of DPO, IPO, DPO-Shift, or Cal-DPO with the same
 valley-probability gate, and the three land within about a point of each other on every architecture —
 while their ungated counterparts scatter across a much wider, mostly-negative range. A separate baseline,
 DPO-Shift (a global, training-progress-scheduled coefficient rather than a per-example gate), barely moves
@@ -35,7 +35,7 @@ the needle off the plain DPO baseline anywhere.
 Δ Chosen (change in the chosen response's log-probability from the first to the last evaluation
 checkpoint) by method, per architecture:
 
-![Delta Chosen by method, per architecture — gated methods cluster high and positive, ungated methods scatter low or negative](delta-chosen-strip-chart.svg)
+![Delta Chosen by method, per architecture, gated methods cluster high and positive, ungated methods scatter low or negative](delta-chosen-strip-chart.svg)
 
 | | Ungated range (DPO / IPO / Cal-DPO / DPO-Shift) | Gated range (any base loss) |
 |---|---|---|
@@ -44,12 +44,12 @@ checkpoint) by method, per architecture:
 | Qwen-0.5B | −25.24 to +1.76 | +3.40 to +4.14 |
 | Qwen1.5-7B | −7.75 to −0.14 | +0.14 to +0.74 |
 
-Every ungated method includes at least one strongly negative result. Every gated method — regardless of
-which base loss it wraps — clusters tightly and positive.
+Every ungated method includes at least one strongly negative result. Every gated method, regardless of
+which base loss it wraps, clusters tightly and positively.
 
 ## Full results
 
-Δ Chosen / Δ Rejected — change in chosen/rejected response log-probability from first to last eval
+Δ Chosen / Δ Rejected change in chosen/rejected response log-probability from first to last eval
 checkpoint. A less-negative Δ Rejected means less squeezing. **Margin** = Δ Chosen − Δ Rejected. **Δ
 Others** = mean change across five unrelated-example probes (spillover onto examples training shouldn't
 touch).
@@ -135,8 +135,8 @@ DPO baseline: Δ Chosen −6.11 · Δ Rejected −9.85
 Cal-DPO's calibration regularizer (β = 0.001 ⇒ implied target reward gap c = 1/(2β) = 500) produces a
 training-time calibration loss on the order of 10⁵ and gradient norms in the millions, on every
 architecture, gated or not. This is a property of the hyperparameter, not an architecture-specific
-instability — it was checked systematically before drawing that conclusion. The resulting checkpoints are
-valid and their mass-dynamics numbers (shown above) are unaffected; the raw loss magnitude during training
+instability; it was checked systematically before drawing that conclusion. The resulting checkpoints are
+valid, and their mass-dynamics numbers (shown above) are unaffected; the raw loss magnitude during training
 just isn't a meaningful signal for this particular method.
 
 ## Method
