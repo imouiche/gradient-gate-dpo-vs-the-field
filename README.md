@@ -10,7 +10,7 @@ parameters.**
 > likely. This repo extends the paper's results with an additional architecture (Qwen1.5-7B) and one
 > further base loss (DPO-Shift) trained beyond what's in the current preprint.
 
-**Paper:** [arXiv:2605.02626](https://arxiv.org/abs/2605.02626)
+**Paper:** [arXiv:2605.02626](https://arxiv.org/abs/2605.02626); 
 **Interactive comparison:** [claude.ai/code/artifact/…](https://claude.ai/code/artifact/6908ffbf-7781-453f-a573-897fd7470b3c), same data, with sortable detail and a live rendering of the chart below.
 
 ## The question
@@ -47,7 +47,7 @@ checkpoint) by method, per architecture:
 Every ungated method includes at least one strongly negative result. Every gated method, regardless of
 which base loss it wraps, clusters tightly and positively.
 
-## Full results
+## Intermediate results
 
 Δ Chosen / Δ Rejected change in chosen/rejected response log-probability from first to last eval
 checkpoint. A less-negative Δ Rejected means less squeezing. **Margin** = Δ Chosen − Δ Rejected. **Δ
@@ -140,6 +140,7 @@ valid, and their mass-dynamics numbers (shown above) are unaffected; the raw los
 just isn't a meaningful signal for this particular method.
 
 ## Method
+Read our **Paper:** [arXiv:2605.02626](https://arxiv.org/abs/2605.02626) for full details and final results.
 
 - **Protocol**: for each configuration, an SFT-warmed policy is trained with the given preference loss for
   5 epochs on 5,001 examples (Anthropic-HH, helpful-base split), with periodic evaluation checkpoints
@@ -159,7 +160,7 @@ just isn't a meaningful signal for this particular method.
 ```bibtex
 @misc{mouiche2026gatedpo,
   title  = {Gradient-Gated DPO: Stabilizing Preference Optimization in Language Models},
-  author = {Mouiche, Inoussa},
+  author = {Mouiche and Bahi},
   year   = {2026},
   eprint = {2605.02626},
   archivePrefix = {arXiv},
