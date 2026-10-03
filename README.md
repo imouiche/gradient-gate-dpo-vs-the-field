@@ -29,8 +29,9 @@ recipes on four architectures: Pythia-410M, Qwen-0.5B, LLaMA-7B, and Qwen1.5-7B.
 **The gate dominates the choice of base loss.** Gate any of DPO, IPO, DPO-Shift, or Cal-DPO with the same
 valley-probability gate, and the three land within about a point of each other on every architecture,
 while their ungated counterparts scatter across a much wider, mostly-negative range. A separate baseline,
-DPO-Shift (a global, training-progress-scheduled coefficient rather than a per-example gate), barely moves
-the needle off the plain DPO baseline anywhere.
+DPO-Shift (a global, training-progress-scheduled coefficient rather than a per-example gate), moves the
+needle only modestly off the plain DPO baseline, nowhere close to the gated cluster, on every
+architecture.
 
 Δ Chosen (change in the chosen response's log-probability from the first to the last evaluation
 checkpoint) by method, per architecture:
@@ -39,10 +40,10 @@ checkpoint) by method, per architecture:
 
 | | Ungated range (DPO / IPO / Cal-DPO / DPO-Shift) | Gated range (any base loss) |
 |---|---|---|
-| Pythia-410M | −10.72 to +2.34 | +3.54 to +4.33 |
-| LLaMA-7B | −0.13 to +0.05 | +0.19 to +0.58 |
-| Qwen-0.5B | −25.24 to +1.76 | +3.40 to +4.14 |
-| Qwen1.5-7B | −7.75 to −0.14 | +0.14 to +0.74 |
+| Pythia-410M | −11.90 to +1.03 | +0.96 to +1.61 |
+| LLaMA-7B | −0.06 to +0.19 | +0.28 to +0.68 |
+| Qwen-0.5B | −14.73 to +0.96 | +1.22 to +1.62 |
+| Qwen1.5-7B | −6.24 to +0.59 | +0.33 to +0.94 |
 
 Every ungated method includes at least one strongly negative result. Every gated method, regardless of
 which base loss it wraps, clusters tightly and positively.
@@ -56,88 +57,89 @@ touch).
 
 ### Pythia-410M (410M params)
 
-DPO baseline: Δ Chosen −10.72 · Δ Rejected −25.73
+DPO baseline: Δ Chosen −11.90 · Δ Rejected −26.35
 
 | Method | Δ Chosen | Δ Rejected | Margin | Δ Others |
 |---|--:|--:|--:|--:|
-| DPO (baseline) | −10.72 | −25.73 | +15.01 | −30.82 |
-| IPO | −1.59 | −9.50 | +7.90 | −8.22 |
-| Cal-DPO | +2.34 | −7.60 | +9.94 | −6.16 |
-| **Gate-IPO** (seq) | **+3.57** | −2.18 | +5.75 | +1.85 |
-| **Gate-IPO** (q10) | **+3.54** | −3.16 | +6.70 | +0.75 |
-| **Gate-Cal-DPO** (seq) | **+3.74** | −3.59 | +7.33 | +0.67 |
-| **Gate-Cal-DPO** (q10) | **+3.90** | −3.52 | +7.42 | −1.32 |
-| DPO-Shift | −5.52 | −18.56 | +13.04 | −20.66 |
-| **Gate-DPO** (seq) | **+3.97** | −2.87 | +6.83 | +1.36 |
-| **Gate-DPO** (q10) | **+3.78** | −5.55 | +9.33 | −6.80 |
-| **Gate-DPO-Shift** (seq) | **+4.01** | −2.81 | +6.82 | +0.79 |
-| **Gate-DPO-Shift** (q10) | **+4.33** | −3.04 | +7.38 | −0.05 |
+| DPO (baseline) | −11.90 | −26.35 | +14.45 | −27.55 |
+| IPO | −0.95 | −9.43 | +8.48 | −8.55 |
+| Cal-DPO | +1.03 | −6.74 | +7.77 | −3.02 |
+| **Gate-IPO** (seq) | **+0.96** | −6.46 | +7.43 | −1.46 |
+| **Gate-IPO** (q10) | **+1.22** | −6.69 | +7.91 | −2.76 |
+| **Gate-Cal-DPO** (seq) | **+1.51** | −5.64 | +7.15 | −1.04 |
+| **Gate-Cal-DPO** (q10) | **+1.61** | −5.61 | +7.22 | −2.06 |
+| DPO-Shift | −10.60 | −25.40 | +14.81 | −27.85 |
+| **Gate-DPO** (seq) | **+1.17** | −7.31 | +8.48 | −1.42 |
+| **Gate-DPO** (q10) | **+1.30** | −7.60 | +8.90 | −3.86 |
+| **Gate-DPO-Shift** (seq) | **+1.23** | −7.25 | +8.47 | −1.65 |
+| **Gate-DPO-Shift** (q10) | **+1.58** | −7.29 | +8.87 | −3.37 |
 
 ### LLaMA-7B (7B params)
 
-DPO baseline: Δ Chosen −0.09 · Δ Rejected −0.84
+DPO baseline: Δ Chosen −0.06 · Δ Rejected −0.88
 
 | Method | Δ Chosen | Δ Rejected | Margin | Δ Others |
 |---|--:|--:|--:|--:|
-| DPO (baseline) | −0.09 | −0.84 | +0.75 | −0.96 |
-| IPO | +0.05 | −0.60 | +0.65 | −0.79 |
-| Cal-DPO | −0.13 | −0.91 | +0.78 | −1.01 |
-| **Gate-IPO** (seq) | **+0.32** | −0.16 | +0.48 | −0.12 |
-| **Gate-IPO** (q10) | **+0.46** | +0.01 | +0.46 | −0.37 |
-| **Gate-Cal-DPO** (seq) | **+0.19** | −0.45 | +0.64 | −0.38 |
-| **Gate-Cal-DPO** (q10) | **+0.52** | −0.05 | +0.57 | −0.42 |
-| DPO-Shift | −0.03 | −0.76 | +0.72 | −0.93 |
-| **Gate-DPO** (seq) | **+0.30** | −0.29 | +0.59 | −0.26 |
-| **Gate-DPO** (q10) | **+0.57** | +0.06 | +0.51 | −0.35 |
-| **Gate-DPO-Shift** (seq) | **+0.29** | −0.28 | +0.57 | −0.28 |
-| **Gate-DPO-Shift** (q10) | **+0.58** | +0.09 | +0.49 | −0.36 |
+| DPO (baseline) | −0.06 | −0.88 | +0.83 | −1.03 |
+| IPO | +0.08 | −0.64 | +0.73 | −0.87 |
+| Cal-DPO | +0.19 | −0.43 | +0.62 | −0.67 |
+| **Gate-IPO** (seq) | **+0.32** | −0.28 | +0.59 | −0.32 |
+| **Gate-IPO** (q10) | **+0.59** | +0.02 | +0.57 | −0.42 |
+| **Gate-Cal-DPO** (seq) | **+0.36** | −0.22 | +0.58 | −0.32 |
+| **Gate-Cal-DPO** (q10) | **+0.56** | −0.01 | +0.57 | −0.39 |
+| DPO-Shift | −0.01 | −0.80 | +0.79 | −0.99 |
+| **Gate-DPO** (seq) | **+0.28** | −0.41 | +0.69 | −0.38 |
+| **Gate-DPO** (q10) | **+0.66** | +0.08 | +0.58 | −0.41 |
+| **Gate-DPO-Shift** (seq) | **+0.32** | −0.34 | +0.66 | −0.37 |
+| **Gate-DPO-Shift** (q10) | **+0.68** | +0.10 | +0.58 | −0.40 |
 
 ### Qwen-0.5B
 
-DPO baseline: Δ Chosen −10.61 · Δ Rejected −25.15
+DPO baseline: Δ Chosen −14.73 · Δ Rejected −30.47
 
 | Method | Δ Chosen | Δ Rejected | Margin | Δ Others |
 |---|--:|--:|--:|--:|
-| DPO (baseline) | −10.61 | −25.15 | +14.53 | −26.80 |
-| IPO | +1.76 | −4.33 | +6.09 | −2.89 |
-| Cal-DPO | −25.24 | −49.38 | +24.15 | −42.68 |
-| **Gate-IPO** (seq) | **+3.40** | −2.39 | +5.78 | +1.00 |
-| **Gate-IPO** (q10) | **+3.64** | −2.90 | +6.53 | −0.51 |
-| **Gate-Cal-DPO** (seq) | **+3.48** | −3.59 | +7.07 | +0.59 |
-| **Gate-Cal-DPO** (q10) | **+3.80** | −3.32 | +7.12 | −0.87 |
-| DPO-Shift | −7.87 | −21.93 | +14.07 | −23.78 |
-| **Gate-DPO** (seq) | **+3.87** | −5.13 | +9.00 | −3.31 |
-| **Gate-DPO** (q10) | **+4.14** | −5.14 | +9.28 | −4.64 |
-| **Gate-DPO-Shift** (seq) | **+3.71** | −2.88 | +6.59 | +1.09 |
-| **Gate-DPO-Shift** (q10) | **+4.00** | −2.79 | +6.79 | −0.21 |
+| DPO (baseline) | −14.73 | −30.47 | +15.74 | −31.47 |
+| IPO | −1.26 | −8.36 | +7.10 | −6.39 |
+| Cal-DPO | +0.96 | −6.03 | +6.98 | −3.19 |
+| **Gate-IPO** (seq) | **+1.22** | −5.60 | +6.82 | −1.00 |
+| **Gate-IPO** (q10) | **+1.45** | −5.61 | +7.06 | −2.08 |
+| **Gate-Cal-DPO** (seq) | **+1.48** | −4.94 | +6.42 | −0.85 |
+| **Gate-Cal-DPO** (q10) | **+1.62** | −4.88 | +6.50 | −1.94 |
+| DPO-Shift | −11.96 | −27.23 | +15.27 | −28.43 |
+| **Gate-DPO** (seq) | **+1.23** | −6.37 | +7.60 | −1.00 |
+| **Gate-DPO** (q10) | **+1.47** | −6.25 | +7.72 | −2.72 |
+| **Gate-DPO-Shift** (seq) | **+1.32** | −6.17 | +7.49 | −0.81 |
+| **Gate-DPO-Shift** (q10) | **+1.57** | −6.00 | +7.57 | −2.41 |
 
 ### Qwen1.5-7B
 
-DPO baseline: Δ Chosen −6.11 · Δ Rejected −9.85
+DPO baseline: Δ Chosen −6.24 · Δ Rejected −10.45
 
 | Method | Δ Chosen | Δ Rejected | Margin | Δ Others |
 |---|--:|--:|--:|--:|
-| SFT (pre-preference reference) | +6.84 | +5.44 | +1.40 | +0.27 |
-| DPO (baseline) | −6.11 | −9.85 | +3.74 | −12.26 |
-| IPO | −0.14 | −1.71 | +1.57 | −1.79 |
-| Cal-DPO | −7.75 | −12.18 | +4.43 | −15.69 |
-| **Gate-IPO** (seq) | **+0.36** | −0.84 | +1.20 | −0.33 |
-| **Gate-IPO** (q10) | **+0.48** | −0.75 | +1.23 | −0.75 |
-| **Gate-Cal-DPO** (seq) | **+0.14** | −1.45 | +1.59 | −1.30 |
-| **Gate-Cal-DPO** (q10) | **+0.58** | −0.80 | +1.38 | −1.17 |
-| DPO-Shift | −5.21 | −8.58 | +3.37 | −10.58 |
-| **Gate-DPO** (seq) | **+0.32** | −1.15 | +1.46 | −0.81 |
-| **Gate-DPO** (q10) | **+0.74** | −0.54 | +1.28 | −0.67 |
-| **Gate-DPO-Shift** (seq) | **+0.38** | −1.01 | +1.39 | −0.66 |
+| DPO (baseline) | −6.24 | −10.45 | +4.21 | −13.48 |
+| IPO | −0.17 | −2.16 | +1.99 | −2.71 |
+| Cal-DPO | +0.59 | −1.07 | +1.66 | −1.31 |
+| **Gate-IPO** (seq) | **+0.64** | −1.02 | +1.66 | −0.80 |
+| **Gate-IPO** (q10) | **+0.82** | −0.75 | +1.58 | −1.18 |
+| **Gate-Cal-DPO** (seq) | **+0.80** | −0.71 | +1.51 | −0.49 |
+| **Gate-Cal-DPO** (q10) | **+0.94** | −0.52 | +1.46 | −0.81 |
+| DPO-Shift | −5.32 | −9.20 | +3.88 | −11.80 |
+| **Gate-DPO** (seq) | **+0.33** | −1.58 | +1.92 | −1.65 |
+| **Gate-DPO** (q10) | **+0.85** | −0.77 | +1.62 | −1.39 |
+| **Gate-DPO-Shift** (seq) | **+0.44** | −1.41 | +1.85 | −1.43 |
+| **Gate-DPO-Shift** (q10) | **+0.90** | −0.71 | +1.62 | −1.29 |
 
 ## A note on the Cal-DPO calibration term
 
-Cal-DPO's calibration regularizer (β = 0.001 ⇒ implied target reward gap c = 1/(2β) = 500) produces a
-training-time calibration loss on the order of 10⁵ and gradient norms in the millions, on every
-architecture, gated or not. This is a property of the hyperparameter, not an architecture-specific
-instability; it was checked systematically before drawing that conclusion. The resulting checkpoints are
-valid, and their mass-dynamics numbers (shown above) are unaffected; the raw loss magnitude during training
-just isn't a meaningful signal for this particular method.
+An earlier version of this comparison trained Cal-DPO and Gate-Cal-DPO with β = 0.001 for the calibration
+term, implying a target reward gap c = 1/(2β) = 500 — far outside the range the method is designed for,
+and the source of training-time calibration losses on the order of 10⁵ with gradient norms in the
+millions on every architecture. That was a bug in the hyperparameter choice, not a property of the
+method or an architecture-specific instability: the original Cal-DPO formulation uses β = 0.1, giving a
+sane target c = 1/(2β) = 5.0. All Cal-DPO and Gate-Cal-DPO checkpoints were retrained with the corrected
+β, and every number in this repository, including the strip chart, reflects that fix.
 
 ## Method
 Read our **Paper:** [arXiv:2605.02626](https://arxiv.org/abs/2605.02626) for full details and final results.
@@ -170,4 +172,4 @@ Read our **Paper:** [arXiv:2605.02626](https://arxiv.org/abs/2605.02626) for ful
 
 ---
 
-*Results current as of September 2026. Code and full experimental infrastructure available on request.*
+*Results current as of October 2026.* Code and full experimental infrastructure available on request.

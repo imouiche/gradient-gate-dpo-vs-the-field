@@ -3,79 +3,80 @@
 <text x="20" y="34" font-size="20" font-weight="600" fill="#12161D">Delta Chosen by method, per architecture</text>
 <text x="20" y="56" font-size="13" fill="#4B5563">Gated methods (teal) cluster high and positive on every architecture; ungated methods (rust) scatter low or negative.</text>
 <text x="20" y="107.0" font-size="14" font-weight="600" fill="#12161D">Pythia-410M</text>
-<text x="20" y="125.0" font-size="10.5" fill="#8992A0">baseline -10.7</text>
-<line x1="594.0" y1="97.0" x2="594.0" y2="129.0" stroke="#D8DCE2" stroke-width="1.5" stroke-dasharray="2,3"/>
-<text x="594.0" y="143.0" font-size="9.5" fill="#8992A0" text-anchor="middle">0</text>
-<circle cx="194.8" cy="111.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO: -10.72</title></circle>
-<circle cx="534.8" cy="111.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>IPO: -1.59</title></circle>
-<circle cx="681.1" cy="111.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Cal-DPO: +2.34</title></circle>
-<circle cx="726.9" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (seq): +3.57</title></circle>
-<circle cx="725.8" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (q10): +3.54</title></circle>
-<circle cx="733.2" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (seq): +3.74</title></circle>
-<circle cx="739.2" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (q10): +3.90</title></circle>
-<circle cx="388.4" cy="111.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO-Shift: -5.52</title></circle>
-<circle cx="741.8" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (seq): +3.97</title></circle>
-<circle cx="734.7" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (q10): +3.78</title></circle>
-<circle cx="743.3" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (seq): +4.01</title></circle>
-<circle cx="755.2" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (q10): +4.33</title></circle>
-<text x="150" y="89.0" font-size="9.5" fill="#8992A0">-10.5</text>
-<text x="800" y="89.0" font-size="9.5" fill="#8992A0" text-anchor="end">+4.1</text>
+<text x="20" y="125.0" font-size="10.5" fill="#8992A0">baseline -11.9</text>
+<line x1="688.5" y1="97.0" x2="688.5" y2="129.0" stroke="#D8DCE2" stroke-width="1.5" stroke-dasharray="2,3"/>
+<text x="688.5" y="143.0" font-size="9.5" fill="#8992A0" text-anchor="middle">0</text>
+<circle cx="194.8" cy="111.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO: -11.90</title></circle>
+<circle cx="649.0" cy="111.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>IPO: -0.95</title></circle>
+<circle cx="731.2" cy="111.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Cal-DPO: +1.03</title></circle>
+<circle cx="248.9" cy="111.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO-Shift: -10.60</title></circle>
+<circle cx="728.5" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (seq): +0.96</title></circle>
+<circle cx="739.2" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (q10): +1.22</title></circle>
+<circle cx="751.2" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (seq): +1.51</title></circle>
+<circle cx="755.2" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (q10): +1.61</title></circle>
+<circle cx="736.8" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (seq): +1.17</title></circle>
+<circle cx="742.2" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (q10): +1.30</title></circle>
+<circle cx="739.4" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (seq): +1.23</title></circle>
+<circle cx="754.0" cy="111.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (q10): +1.58</title></circle>
+<text x="150" y="89.0" font-size="9.5" fill="#8992A0">-11.9</text>
+<text x="800" y="89.0" font-size="9.5" fill="#8992A0" text-anchor="end">+1.6</text>
 <line x1="20" y1="148" x2="820" y2="148" stroke="#D8DCE2" stroke-width="1"/>
 <text x="20" y="177.0" font-size="14" font-weight="600" fill="#12161D">LLaMA-7B</text>
 <text x="20" y="195.0" font-size="10.5" fill="#8992A0">baseline -0.1</text>
-<line x1="297.4" y1="167.0" x2="297.4" y2="199.0" stroke="#D8DCE2" stroke-width="1.5" stroke-dasharray="2,3"/>
-<text x="297.4" y="213.0" font-size="9.5" fill="#8992A0" text-anchor="middle">0</text>
-<circle cx="226.4" cy="181.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO: -0.09</title></circle>
-<circle cx="336.9" cy="181.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>IPO: +0.05</title></circle>
-<circle cx="194.8" cy="181.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Cal-DPO: -0.13</title></circle>
-<circle cx="550.0" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (seq): +0.32</title></circle>
-<circle cx="660.5" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (q10): +0.46</title></circle>
-<circle cx="447.4" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (seq): +0.19</title></circle>
-<circle cx="707.8" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (q10): +0.52</title></circle>
-<circle cx="273.7" cy="181.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO-Shift: -0.03</title></circle>
-<circle cx="534.2" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (seq): +0.30</title></circle>
-<circle cx="747.3" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (q10): +0.57</title></circle>
-<circle cx="526.3" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (seq): +0.29</title></circle>
-<circle cx="755.2" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (q10): +0.58</title></circle>
+<line x1="239.2" y1="167.0" x2="239.2" y2="199.0" stroke="#D8DCE2" stroke-width="1.5" stroke-dasharray="2,3"/>
+<text x="239.2" y="213.0" font-size="9.5" fill="#8992A0" text-anchor="middle">0</text>
+<circle cx="194.8" cy="181.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO: -0.06</title></circle>
+<circle cx="301.8" cy="181.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>IPO: +0.08</title></circle>
+<circle cx="387.0" cy="181.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Cal-DPO: +0.19</title></circle>
+<circle cx="231.2" cy="181.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO-Shift: -0.01</title></circle>
+<circle cx="480.3" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (seq): +0.32</title></circle>
+<circle cx="686.2" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (q10): +0.59</title></circle>
+<circle cx="513.1" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (seq): +0.36</title></circle>
+<circle cx="662.0" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (q10): +0.56</title></circle>
+<circle cx="451.6" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (seq): +0.28</title></circle>
+<circle cx="739.1" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (q10): +0.66</title></circle>
+<circle cx="481.5" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (seq): +0.32</title></circle>
+<circle cx="755.2" cy="181.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (q10): +0.68</title></circle>
 <text x="150" y="159.0" font-size="9.5" fill="#8992A0">-0.1</text>
-<text x="800" y="159.0" font-size="9.5" fill="#8992A0" text-anchor="end">+0.6</text>
+<text x="800" y="159.0" font-size="9.5" fill="#8992A0" text-anchor="end">+0.7</text>
 <line x1="20" y1="218" x2="820" y2="218" stroke="#D8DCE2" stroke-width="1"/>
 <text x="20" y="247.0" font-size="14" font-weight="600" fill="#12161D">Qwen-0.5B</text>
-<text x="20" y="265.0" font-size="10.5" fill="#8992A0">baseline -10.6</text>
-<line x1="676.2" y1="237.0" x2="676.2" y2="269.0" stroke="#D8DCE2" stroke-width="1.5" stroke-dasharray="2,3"/>
-<text x="676.2" y="283.0" font-size="9.5" fill="#8992A0" text-anchor="middle">0</text>
-<circle cx="473.9" cy="251.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO: -10.61</title></circle>
-<circle cx="709.8" cy="251.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>IPO: +1.76</title></circle>
-<circle cx="194.8" cy="251.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Cal-DPO: -25.24</title></circle>
-<circle cx="741.1" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (seq): +3.40</title></circle>
-<circle cx="745.6" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (q10): +3.64</title></circle>
-<circle cx="742.6" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (seq): +3.48</title></circle>
-<circle cx="748.7" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (q10): +3.80</title></circle>
-<circle cx="526.1" cy="251.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO-Shift: -7.87</title></circle>
-<circle cx="750.0" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (seq): +3.87</title></circle>
-<circle cx="755.2" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (q10): +4.14</title></circle>
-<circle cx="747.0" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (seq): +3.71</title></circle>
-<circle cx="752.5" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (q10): +4.00</title></circle>
-<text x="150" y="229.0" font-size="9.5" fill="#8992A0">-24.9</text>
-<text x="800" y="229.0" font-size="9.5" fill="#8992A0" text-anchor="end">+3.8</text>
+<text x="20" y="265.0" font-size="10.5" fill="#8992A0">baseline -14.7</text>
+<line x1="699.6" y1="237.0" x2="699.6" y2="269.0" stroke="#D8DCE2" stroke-width="1.5" stroke-dasharray="2,3"/>
+<text x="699.6" y="283.0" font-size="9.5" fill="#8992A0" text-anchor="middle">0</text>
+<circle cx="194.8" cy="251.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO: -14.73</title></circle>
+<circle cx="656.4" cy="251.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>IPO: -1.26</title></circle>
+<circle cx="732.5" cy="251.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Cal-DPO: +0.96</title></circle>
+<circle cx="289.9" cy="251.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO-Shift: -11.96</title></circle>
+<circle cx="741.5" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (seq): +1.22</title></circle>
+<circle cx="749.3" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (q10): +1.45</title></circle>
+<circle cx="750.4" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (seq): +1.48</title></circle>
+<circle cx="755.2" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (q10): +1.62</title></circle>
+<circle cx="741.7" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (seq): +1.23</title></circle>
+<circle cx="750.2" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (q10): +1.47</title></circle>
+<circle cx="744.8" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (seq): +1.32</title></circle>
+<circle cx="753.5" cy="251.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (q10): +1.57</title></circle>
+<text x="150" y="229.0" font-size="9.5" fill="#8992A0">-14.7</text>
+<text x="800" y="229.0" font-size="9.5" fill="#8992A0" text-anchor="end">+1.6</text>
 <line x1="20" y1="288" x2="820" y2="288" stroke="#D8DCE2" stroke-width="1"/>
 <text x="20" y="317.0" font-size="14" font-weight="600" fill="#12161D">Qwen1.5-7B</text>
-<text x="20" y="335.0" font-size="10.5" fill="#8992A0">baseline -6.1</text>
-<line x1="706.3" y1="307.0" x2="706.3" y2="339.0" stroke="#D8DCE2" stroke-width="1.5" stroke-dasharray="2,3"/>
-<text x="706.3" y="353.0" font-size="9.5" fill="#8992A0" text-anchor="middle">0</text>
-<circle cx="303.1" cy="321.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO: -6.11</title></circle>
-<circle cx="697.1" cy="321.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>IPO: -0.14</title></circle>
-<circle cx="194.8" cy="321.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Cal-DPO: -7.75</title></circle>
-<circle cx="730.1" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (seq): +0.36</title></circle>
-<circle cx="738.0" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (q10): +0.48</title></circle>
-<circle cx="715.6" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (seq): +0.14</title></circle>
-<circle cx="744.6" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (q10): +0.58</title></circle>
-<circle cx="362.5" cy="321.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO-Shift: -5.21</title></circle>
-<circle cx="727.5" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (seq): +0.32</title></circle>
-<circle cx="755.2" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (q10): +0.74</title></circle>
-<circle cx="731.4" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (seq): +0.38</title></circle>
-<text x="150" y="299.0" font-size="9.5" fill="#8992A0">-7.6</text>
-<text x="800" y="299.0" font-size="9.5" fill="#8992A0" text-anchor="end">+0.6</text>
+<text x="20" y="335.0" font-size="10.5" fill="#8992A0">baseline -6.2</text>
+<line x1="681.6" y1="307.0" x2="681.6" y2="339.0" stroke="#D8DCE2" stroke-width="1.5" stroke-dasharray="2,3"/>
+<text x="681.6" y="353.0" font-size="9.5" fill="#8992A0" text-anchor="middle">0</text>
+<circle cx="194.8" cy="321.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO: -6.24</title></circle>
+<circle cx="668.5" cy="321.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>IPO: -0.17</title></circle>
+<circle cx="727.5" cy="321.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Cal-DPO: +0.59</title></circle>
+<circle cx="266.6" cy="321.0" r="4.5" fill="#B4501E" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>DPO-Shift: -5.32</title></circle>
+<circle cx="731.5" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (seq): +0.64</title></circle>
+<circle cx="746.0" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-IPO (q10): +0.82</title></circle>
+<circle cx="744.3" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (seq): +0.80</title></circle>
+<circle cx="755.2" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-Cal-DPO (q10): +0.94</title></circle>
+<circle cx="707.7" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (seq): +0.33</title></circle>
+<circle cx="747.7" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO (q10): +0.85</title></circle>
+<circle cx="716.0" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (seq): +0.44</title></circle>
+<circle cx="752.1" cy="321.0" r="4.5" fill="#0E7C6B" fill-opacity="0.88" stroke="#FFFFFF" stroke-width="0.75"><title>Gate-DPO-Shift (q10): +0.90</title></circle>
+<text x="150" y="299.0" font-size="9.5" fill="#8992A0">-6.2</text>
+<text x="800" y="299.0" font-size="9.5" fill="#8992A0" text-anchor="end">+0.9</text>
 <circle cx="25" cy="382" r="5" fill="#0E7C6B"/>
 <text x="36" y="386" font-size="12" fill="#4B5563">Gated (any base loss)</text>
 <circle cx="209.6" cy="382" r="5" fill="#B4501E"/>
